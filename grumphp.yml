@@ -1,0 +1,30 @@
+parameters:
+  git_hook_variables:
+    EXEC_GRUMPHP_COMMAND: 'cd .docker/tests && make up && docker-compose exec php'
+  tasks:
+    codeception: ~
+    securitychecker:
+      metadata:
+        blocking: false
+    php_cs_auto_fixerv2:
+      config: .php_cs.dist
+      allow_risky: true
+      metadata:
+        priority: 300
+    git_commit_message:
+      enforce_capitalized_subject: false
+      type_scope_conventions:
+        - types:
+            - build
+            - ci
+            - chore
+            - docs
+            - feat
+            - fix
+            - perf
+            - refactor
+            - test
+        - scopes: []
+    phpstan: ~
+  extensions:
+    - Wearejust\GrumPHPExtra\Extension\Loader

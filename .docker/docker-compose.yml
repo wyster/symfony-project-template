@@ -1,0 +1,26 @@
+version: "3"
+services:
+  php:
+    restart: on-failure
+    build:
+      context: ./php
+      args:
+        PHP_VERSION: ${PHP_VERSION}
+    tty: true
+    depends_on:
+      - db
+    env_file:
+      - ./.env
+    volumes:
+      - ./php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+      - ..:/var/www/html
+  web:
+    build: nginx
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ..:/var/www/html
+    depends_on:
+      - php
+    restart: on-failure
+    env_file:
+      - ./.env
