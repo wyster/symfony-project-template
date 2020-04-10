@@ -12,6 +12,8 @@ services:
     volumes:
       - ./php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
       - ..:/var/www/html
+    depends_on:
+      - mysql
   web:
     build: nginx
     volumes:
@@ -22,3 +24,15 @@ services:
     restart: on-failure
     env_file:
       - ./.env
+  mysql:
+    image: mysql:${MYSQL_VERSION}
+    restart: on-failure
+    env_file:
+      - ".env"
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    volumes:
+      - "./data/mysql:/var/lib/mysql"

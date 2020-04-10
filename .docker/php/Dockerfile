@@ -13,6 +13,9 @@ RUN apt update && apt install -y \
 # XDebug
 RUN pecl install xdebug
 
+# MySQL
+RUN docker-php-ext-install -j$(nproc) pdo pdo_mysql
+
 # Other
 RUN docker-php-ext-install zip
 
