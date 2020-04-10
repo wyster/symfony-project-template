@@ -13,6 +13,6 @@ class IndexController extends AbstractController
      */
     public function main(): Response
     {
-        return new Response('Hello world!');
+        return $this->render('main.html.twig', ['message' => 'hello world!']);
     }
 }
