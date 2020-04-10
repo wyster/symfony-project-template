@@ -8,6 +8,7 @@
     "symfony/dotenv": "5.0.*",
     "symfony/flex": "^1.3.1",
     "symfony/framework-bundle": "5.0.*",
+    "symfony/orm-pack": "^1.0",
     "symfony/yaml": "5.0.*"
   },
   "require-dev": {
@@ -20,6 +21,7 @@
     "phpro/grumphp": "^0.17",
     "phpstan/phpstan": "~0.12.3",
     "sensiolabs/security-checker": "~6.0",
+    "symfony/maker-bundle": "~1.15",
     "vimeo/psalm": "~3.8",
     "wearejust/grumphp-extra-tasks": "~2.2"
   },
