@@ -1,0 +1,12 @@
+parameters:
+	level: 8
+	parallel:
+		maximumNumberOfProcesses: 2
+	paths:
+		- src
+		- tests
+	excludes_analyse:
+		- %currentWorkingDirectory%/src/DataFixtures/*
+		- %currentWorkingDirectory%/tests/_support/_generated/*
+	doctrine:
+		objectManagerLoader: tests/objectManager.php

@@ -6,12 +6,12 @@ namespace Test;
 
 class Example2Cest
 {
-    public function _before(FunctionalTester $I)
+    public function _before(FunctionalTester $I): void
     {
     }
 
     // tests
-    public function tryToTest(FunctionalTester $I)
+    public function tryToTest(FunctionalTester $I): void
     {
     }
 }

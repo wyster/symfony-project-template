@@ -6,21 +6,18 @@ namespace Test;
 
 class ExampleTest extends \Codeception\Test\Unit
 {
-    /**
-     * @var \Test\UnitTester
-     */
-    protected $tester;
+    protected UnitTester $tester;
 
-    protected function _before()
+    protected function _before(): void
     {
     }
 
-    protected function _after()
+    protected function _after(): void
     {
     }
 
     // tests
-    public function testSomeFeature()
+    public function testSomeFeature(): void
     {
     }
 }
